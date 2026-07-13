@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright, Microsoft Corporation, All rights reserved.-->
+<Rule Name="Link" PageTemplate="tool" DisplayName="Linker" SwitchPrefix="-" Order="20" xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="General" />
+    <Category Name="Input" DisplayName="Input" />
+    <Category Name="Debugging" DisplayName="Debugging" />
+    <Category Name="Advanced" DisplayName="Advanced" />
+    <Category Name="All Options" DisplayName="All Options" Subtype="Search" />
+    <Category Name="Command Line" DisplayName="Command Line" Subtype="CommandLine" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" ItemType="Link" Label="" HasConfigurationCondition="true" />
+  </Rule.DataSource>
+  <BoolProperty Name="MSVCErrorReport" DisplayName="Visual Studio Errors Reporting" Description="Report errors which Visual Studio can use to parse for file and line information." Category="General" Switch="fdiagnostics-format=msvc" Visible="false" F1Keyword="">
+  </BoolProperty>
+  <StringProperty Subtype="file" Name="OutputFile" DisplayName="Output File" Description="The option overrides the default name and location of the program that the linker creates. (-o)" Category="General" Switch="o" F1Keyword="VC.Project.VCLinkerTool.OutputFile">
+  </StringProperty>
+  <BoolProperty Name="ShowProgress" DisplayName="Show Progress" Description="Prints Linker Progress Messages." Category="General" Switch="Wl,--stats" F1Keyword="VC.Project.VCLinkerTool.ShowProgress">
+  </BoolProperty>
+  <BoolProperty Name="Version" DisplayName="Version" Description="The -version option tells the linker to put a version number in the header of the executable." Category="General" Switch="Wl,--version" F1Keyword="VC.Project.VCLinkerTool.Version">
+  </BoolProperty>
+  <BoolProperty Name="VerboseOutput" DisplayName="Enable Verbose Output" Description="The -verbose option tells the linker to output verbose messages for debugging." Category="General" Switch="-verbose" F1Keyword="VC.Project.VCLinkerTool.VerboseOutput">
+  </BoolProperty>
+  <BoolProperty Name="Trace" DisplayName="Trace" Description="The --trace option tells the linker to output the input files as are processed." Category="General" Switch="Wl,--trace" F1Keyword="VC.Project.VCLinkerTool.VerboseOutput">
+  </BoolProperty>
+  <StringListProperty Name="TraceSymbols" DisplayName="Trace Symbols" Description="Print the list of files in which a symbol appears. (--trace-symbol=symbol)" Category="General" Switch="Wl,--trace-symbol=" F1Keyword="VC.Project.VCLinkerTool.VerboseOutput">
+  </StringListProperty>
+  <BoolProperty Name="PrintMap" DisplayName="Print Map" Description="The --print-map option tells the linker to output a link map." Category="General" Switch="Wl,--print-map" F1Keyword="VC.Project.VCLinkerTool.VerboseOutput">
+  </BoolProperty>
+  <BoolProperty Name="IncrementalLink" DisplayName="Enable Incremental Linking" Description="The option tells the linker to enable incremental linking." Category="General" Switch="Wl,--incremental" F1Keyword="VC.Project.VCLinkerTool.IncrementalLink" Visible="false">
+  </BoolProperty>
+  <BoolProperty Name="UnresolvedSymbolReferences" DisplayName="Report Unresolved Symbol References" Description="This option when enabled will report unresolved symbol references." Category="General" Switch="Wl,--no-undefined" F1Keyword="VC.Project.VCLinkerTool.UnresolvedReferences">
+  </BoolProperty>
+  <BoolProperty Name="OptimizeforMemory" DisplayName="Optimize For Memory Usage" Description="Optimize for memory usage, by rereading the symbol tables as necessary." Category="General" Switch="Wl,--no-keep-memory" F1Keyword="VC.Project.VCLinkerTool.OptimizeForMemory">
+  </BoolProperty>
+  <StringListProperty Subtype="folder" Name="SharedLibrarySearchPath" DisplayName="Shared Library Search Path" Description="Allows the user to populate the shared library search path. (-rpath-link=path)" Category="General" Switch="Wl,-rpath-link=" F1Keyword="VC.Project.VCLinkerTool.SharedLibrarySearchPath">
+  </StringListProperty>
+  <StringListProperty Subtype="folder" Name="AdditionalLibraryDirectories" DisplayName="Additional Library Directories" Description="Allows the user to override the environmental library path. (-L folder)." Category="General" Switch="Wl,-L" F1Keyword="VC.Project.VCLinkerTool.AdditionalLibraryDirectories">
+  </StringListProperty>
+  <StringProperty Name="RemoteLdToolExe" DisplayName="Linker"
+                  Description="Specifies the program to invoke during linking, or the path to the linker on the remote system."
+                  F1Keyword="VC.Project.VCConfiguration.BuildLogFile"
+                  Category="General" Default="">
+    <StringProperty.DataSource>
+      <DataSource Persistence="ProjectFile" Label="" />
+    </StringProperty.DataSource>
+  </StringProperty>
+  <StringProperty Name="RemoteLdCommmandTimeout" DisplayName="Link Timeout"
+                  Description="Remote linking timeout, in milliseconds."
+                  F1Keyword="VC.Project.VCConfiguration.BuildLogFile"
+                  Category="General" Default="">
+    <StringProperty.DataSource>
+      <DataSource Persistence="ProjectFile" Label="" />
+    </StringProperty.DataSource>
+  </StringProperty>
+  <BoolProperty Name="RemoteLinkLocalCopyOutput" DisplayName="Copy Output"
+                  Description="Specifies whether to copy the build output file from the remote system to the local machine."
+                  F1Keyword="VC.Project.VCConfiguration.BuildLogFile"
+                  Category="General" Default="">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFile" Label="" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <StringProperty Subtype="folder" Name="TrackerLogDirectory" DisplayName="Tracker Log Directory" Description="Tracker Log Directory." Category="General" IncludeInCommandLine="false" Visible="false">
+  </StringProperty>
+  <StringListProperty Subtype="file" Name="IgnoreSpecificDefaultLibraries" DisplayName="Ignore Specific Default Libraries" Description="Specifies one or more names of default libraries to ignore. (--exclude-libs lib,lib)" Category="Input" Switch="-Wl,--exclude-libs" F1Keyword="VC.Project.VCLinkerTool.IgnoreDefaultLibraryNames">
+  </StringListProperty>
+  <BoolProperty Name="IgnoreDefaultLibraries" DisplayName="Ignore Default Libraries" Description="Ignore default libraries and only search libraries explicitely specified." Category="Input" Switch="nostdlib" F1Keyword="VC.Project.VCLinkerTool.IgnoreDefaultLibraryNames">
+  </BoolProperty>
+  <StringListProperty Subtype="file" Name="ForceUndefineSymbolReferences" DisplayName="Force Undefined Symbol References" Description="Force symbol to be entered in the output file as an undefined symbol. (-u symbol --undefined=symbol)" Category="Input" Switch="Wl,--undefined=" F1Keyword="VC.Project.VCLinkerTool.ForceSymbolReferences">
+  </StringListProperty>
+  <StringListProperty Subtype="file" Name="LibraryDependencies" DisplayName="Library Dependencies" Description="This option allows specifying additional libraries to be  added to the linker command line. The additional library will be added to the end of the linker command line  prefixed with 'lib' and end with the '.a' extension.  (-lFILE)" Category="Input" Switch="l" F1Keyword="VC.Project.VCLinkerTool.LibraryDependencies">
+  </StringListProperty>
+  <EnumProperty Name="DebuggerSymbolInformation" DisplayName="Debugger Symbol Information" Description="Debugger symbol information from the output file." Category="Debugging" F1Keyword="VC.Project.VCLinkerTool.ForceFileOutput">
+    <EnumValue Name="true" Switch="" DisplayName="Include All">
+    </EnumValue>
+    <EnumValue Name="OmitDebuggerSymbolInformation" Switch="Wl,--strip-debug" DisplayName="Omit Debugger Symbol Information Only">
+    </EnumValue>
+    <EnumValue Name="OmitAllSymbolInformation" Switch="Wl,--strip-all" DisplayName="Omit All Symbol Information">
+    </EnumValue>
+  </EnumProperty>
+  <StringProperty Name="GenerateMapFile" DisplayName="Map File Name" Description="The Map option tells the linker to create a map file with the user specified name. (-Map=)" Category="Debugging" Switch="Wl,-Map=" F1Keyword="VC.Project.VCLinkerTool.GenerateMapFile">
+  </StringProperty>
+  <BoolProperty ReverseSwitch="Wl,-z,norelro" Name="Relocation" DisplayName="Mark Variables ReadOnly After Relocation" Description="This option marks variables read-only after relocation." Category="Advanced" Switch="Wl,-z,relro" F1Keyword="VC.Project.VCLinkerTool.Relocation">
+  </BoolProperty>
+  <BoolProperty Name="FunctionBinding" DisplayName="Enable Immediate Function Binding" Description="This option marks object for immediate function binding." Category="Advanced" Switch="Wl,-z,now" F1Keyword="VC.Project.VCLinkerTool.FunctionBinding">
+  </BoolProperty>
+  <BoolProperty Name="NoExecStackRequired" DisplayName="Executable Stack Not Required" Description="This option marks output as not requiring executable stack." Category="Advanced" Switch="Wl,-z,noexecstack" F1Keyword="VC.Project.VCLinkerTool.NoExecStackRequired">
+  </BoolProperty>
+  <BoolProperty Name="LinkDll" Category="Advanced" Switch="shared" Visible="false">
+  </BoolProperty>
+  <BoolProperty Name="WholeArchiveBegin" DisplayName="Whole Archive" Description="Whole Archive uses all code from Sources and Additional Dependencies." Category="Advanced" Switch="Wl,--whole-archive" F1Keyword="VC.Project.WholeArchive">
+  </BoolProperty>
+  <StringProperty Name="AdditionalOptions" DisplayName="Additional Options" Description="Additional Options." Category="Command Line" F1Keyword="VC.Project.AdditionalOptionsPage">
+  </StringProperty>
+  <StringListProperty Name="AdditionalDependencies" DisplayName="Additional Dependencies" Description="Specifies additional items to add to the link command line." Category="Input" F1Keyword="VC.Project.VCLinkerTool.AdditionalDependencies">
+  </StringListProperty>
+  <BoolProperty Name="WholeArchiveEnd" Category="Advanced" Switch="Wl,--no-whole-archive" Visible="false">
+  </BoolProperty>
+  <BoolProperty Name="BuildingInIde" Visible="false">
+  </BoolProperty>
+  <BoolProperty Switch="fsanitize=address" Name="EnableASAN" Visible="false" DisplayName="Enable Address Sanitizer" Description="Links program with AddressSanitizer. Must compile with Address Sanitizer option too. Must run with debugger to view diagnostic results." F1Keyword="VC.Project.VCLinkerTool.EnableASAN" Category="Advanced" >
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" Label="" HasConfigurationCondition="true" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+</Rule>
