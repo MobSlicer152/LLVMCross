@@ -9,3 +9,4 @@ Generic/
 *.aps
 *.vcxproj.user
 .p4ignore
+*.dll
