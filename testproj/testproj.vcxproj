@@ -101,7 +101,6 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|RISCV64'">
     <ClCompile>
-      <TargetArch>riscv64-unknown-none</TargetArch>
       <Verbose>true</Verbose>
     </ClCompile>
     <Link>
@@ -111,9 +110,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Generic'">
-    <ClCompile>
-      <TargetArch>riscv64-unknown-none</TargetArch>
-    </ClCompile>
     <Link>
       <AdditionalDependencies>
       </AdditionalDependencies>
