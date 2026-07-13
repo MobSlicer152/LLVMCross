@@ -15,7 +15,11 @@ modification.
 ## Instructions
 
 You will need to build the `BuildExt.Cpp.Clang` project, and then make a symlink/NTFS junction to put the `LLVMCross`
-folder under `C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type`
+folder under `C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type`.
+
+```
+mklink /J "C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type\LLVMCross" "%CD%\LLVMCross"
+```
 
 To make your project work, compare `testproj.vcxproj` to a stock Linux vcxproj. The following are the major changes:
 
