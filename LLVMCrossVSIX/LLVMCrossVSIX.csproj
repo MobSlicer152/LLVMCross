@@ -50,6 +50,10 @@
         <Compile Include="LLVMCrossVSIXPackage.cs" />
     </ItemGroup>
     <ItemGroup>
+        <Content Include="ProjectTemplates\**\*.*">
+            <IncludeInVSIX>true</IncludeInVSIX>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
         <VSIXSourceItem Include="LLVMCross\Default.props">
             <InstallRoot>MSBuild</InstallRoot>
             <VSIXSubPath>Microsoft\VC\v170\Application Type\LLVMCross</VSIXSubPath>

@@ -1,0 +1,27 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>LLVMCross</RelativePathOnDisk>
+    <TemplateFileName>LLVMCross.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+          <Name>Empty Project</Name>
+          <Description>Start from scratch with C++ using LLVMCross. Provides no starting files.</Description>
+          <ProjectType>VC</ProjectType>
+          <ProjectSubType>LLVMCross</ProjectSubType>
+          <TemplateID>LLVMCross.EmptyProject</TemplateID>
+          <SortOrder>1000</SortOrder>
+          <ShowByDefault>true</ShowByDefault>
+          <CreateNewFolder>true</CreateNewFolder>
+          <CreateInPlace>true</CreateInPlace>
+          <DefaultName>EmptyProject</DefaultName>
+          <ProvideDefaultName>true</ProvideDefaultName>
+          <LocationField>Enabled</LocationField>
+          <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+          <Icon>__TemplateIcon.ico</Icon>
+          <LanguageTag>cpp</LanguageTag>
+          <PlatformTag>linux</PlatformTag>
+          <ProjectTypeTag>desktop</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>
