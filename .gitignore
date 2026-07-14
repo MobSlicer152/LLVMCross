@@ -10,3 +10,4 @@ Generic/
 *.vcxproj.user
 .p4ignore
 *.dll
+*.log

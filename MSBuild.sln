@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildExt.Cpp.Clang", "BuildExt.Cpp.Clang\BuildExt.Cpp.Clang.csproj", "{D58A4A24-C452-4E1B-94C1-D45076FA3104}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testproj", "testproj\testproj.vcxproj", "{1B4C618E-0B42-4281-8E6E-B004EC94668B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,18 +27,6 @@ Global
 		{D58A4A24-C452-4E1B-94C1-D45076FA3104}.Release|Generic.Build.0 = Release|Any CPU
 		{D58A4A24-C452-4E1B-94C1-D45076FA3104}.Release|RISCV64.ActiveCfg = Release|Any CPU
 		{D58A4A24-C452-4E1B-94C1-D45076FA3104}.Release|RISCV64.Build.0 = Release|Any CPU
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|Any CPU.ActiveCfg = Debug|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|Any CPU.Build.0 = Debug|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|Generic.ActiveCfg = Debug|Generic
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|Generic.Build.0 = Debug|Generic
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|RISCV64.ActiveCfg = Debug|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Debug|RISCV64.Build.0 = Debug|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|Any CPU.ActiveCfg = Release|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|Any CPU.Build.0 = Release|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|Generic.ActiveCfg = Release|Generic
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|Generic.Build.0 = Release|Generic
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|RISCV64.ActiveCfg = Release|RISCV64
-		{1B4C618E-0B42-4281-8E6E-B004EC94668B}.Release|RISCV64.Build.0 = Release|RISCV64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

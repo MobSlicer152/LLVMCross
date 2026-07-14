@@ -1161,7 +1161,8 @@ namespace BuildExt.Cpp.Clang.Tasks
                 {
                     new string[] { "Default", "" },
                     new string[] { "CompileAsC", "-x c" },
-                    new string[] { "CompileAsCpp", "-x c++" }
+                    new string[] { "CompileAsCpp", "-x c++" },
+                    new string[] { "CompileAsAsm", "-x assembler-with-cpp" }
                 };
                 toolSwitch.SwitchValue = base.ReadSwitchMap("CompileAs", array, value);
                 toolSwitch.Name = "CompileAs";

@@ -19,9 +19,30 @@ Copyright (C) Microsoft Corporation. All rights reserved.
         <_DefaultLLVMInstallDir Condition="'$(_DefaultLLVMInstallDir)' == ''">$(ProgramFiles)\LLVM</_DefaultLLVMInstallDir>
         <LLVMInstallDir Condition="'$(LLVMInstallDir)' == ''">$(_DefaultLLVMInstallDir)</LLVMInstallDir>
         <LLVMToolsVersion Condition="'$(LLVMToolsVersion)' == ''">20</LLVMToolsVersion>
+        <LLVMIncludeVersion Condition="'$(LLVMIncludeVersion)' == ''">$(LLVMToolsVersion)</LLVMIncludeVersion>
         <ExecutablePath>$(LLVMInstallDir)\bin;$(ExecutablePath)</ExecutablePath>
-        <IncludePath>$(LLVMInstallDir)\lib\clang\$(LLVMIncludeVersion)\include;$(IncludePath)</IncludePath>
+        <IncludePath>$(LLVMInstallDir)\lib\clang\$(LLVMIncludeVersion)\include</IncludePath>
+        <IncludePath Condition="'$(Sysroot)' != ''">$(Sysroot)\include;$(IncludePath)</IncludePath>
         <ExcludePath Condition="'$(ExcludePath)' == ''">$(LLVMInstallDir)\lib\clang\$(LLVMIncludeVersion)\include;$(CommonExcludePath)</ExcludePath>
+    </PropertyGroup>
+    
+    <!-- Specific values -->
+    <PropertyGroup Condition="'$(ConfigurationType)' == 'Application'">
+        <LinkCompiled>true</LinkCompiled>
+        <TargetExt>.elf</TargetExt>
+        <OutputType>exe</OutputType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ConfigurationType)' == 'DynamicLibrary'">
+        <LibCompiled>true</LibCompiled>
+        <TargetExt>.so</TargetExt>
+        <OutputType>library</OutputType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(ConfigurationType)' == 'StaticLibrary'">
+        <LibCompiled>true</LibCompiled>
+        <TargetExt>.a</TargetExt>
+        <OutputType>staticlibrary</OutputType>
     </PropertyGroup>
 
     <ItemDefinitionGroup>

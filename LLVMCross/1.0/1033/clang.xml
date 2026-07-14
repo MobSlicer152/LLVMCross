@@ -535,6 +535,12 @@
        DisplayName="Compile as C++ Code"
        Description="Compile as C++ Code.">
     </EnumValue>
+    <EnumValue
+       Name="CompileAsAsm"
+       Switch="x assembler-with-cpp"
+       DisplayName="Compile as Assembly Code"
+       Description="Compile as Assembly Code.">
+    </EnumValue>
   </EnumProperty>
   <StringListProperty
      Subtype="file"

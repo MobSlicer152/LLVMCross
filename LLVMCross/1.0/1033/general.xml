@@ -100,7 +100,7 @@
                 F1Keyword="VC.Project.VCConfiguration.ConfigurationType">
     <EnumValue Name="DynamicLibrary" DisplayName="Dynamic Library (.so)" Description="Dynamic Library (.so)"/>
     <EnumValue Name="StaticLibrary" DisplayName="Static library (.a)" Description="Static Library (.a)" />
-    <EnumValue Name="Application" DisplayName="Application (.out)" Description="Application (.out)" />
+    <EnumValue Name="Application" DisplayName="Application (.elf)" Description="Application (.elf)" />
     <EnumValue Name="Makefile" DisplayName="Makefile" Description="Makefile" />
   </EnumProperty>
 

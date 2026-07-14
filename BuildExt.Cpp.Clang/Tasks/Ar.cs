@@ -19,9 +19,10 @@ namespace BuildExt.Cpp.Clang.Tasks
         {
             this.switchOrderList = new ArrayList();
             this.switchOrderList.Add("Command");
+            this.switchOrderList.Add("AlwaysAppend");
             this.switchOrderList.Add("CreateIndex");
             this.switchOrderList.Add("CreateThinArchive");
-            this.switchOrderList.Add("NoWarnOnCreate");
+            //this.switchOrderList.Add("NoWarnOnCreate");
             this.switchOrderList.Add("TruncateTimestamp");
             this.switchOrderList.Add("SuppressStartupBanner");
             this.switchOrderList.Add("Verbose");
@@ -37,6 +38,13 @@ namespace BuildExt.Cpp.Clang.Tasks
             get
             {
                 return "llvm-ar.exe";
+            }
+        }
+        protected override string AlwaysAppend
+        {
+            get
+            {
+                return "-r";
             }
         }
 
@@ -60,12 +68,12 @@ namespace BuildExt.Cpp.Clang.Tasks
                 toolSwitch.DisplayName = "Command";
                 toolSwitch.Description = "Command for AR.";
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("CreateIndex", "", false, ""));
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("CreateThinArchive", "", false, ""));
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("NoWarnOnCreate", "", false, ""));
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("TruncateTimestamp", "", false, ""));
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("SuppressStartupBanner", "", false, ""));
-                toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("Verbose", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("CreateIndex", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("CreateThinArchive", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("NoWarnOnCreate", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("TruncateTimestamp", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("SuppressStartupBanner", "", false, ""));
+                //toolSwitch.ArgumentRelationList.Add(new ArgumentRelation("Verbose", "", false, ""));
                 string[][] array = new string[][]
                 {
                     new string[] { "Delete", "-d" },
@@ -79,7 +87,7 @@ namespace BuildExt.Cpp.Clang.Tasks
                 toolSwitch.SwitchValue = base.ReadSwitchMap("Command", array, value);
                 toolSwitch.Name = "Command";
                 toolSwitch.Value = value;
-                toolSwitch.MultipleValues = true;
+                //toolSwitch.MultipleValues = true;
                 base.ActiveToolSwitches.Add("Command", toolSwitch);
                 base.AddActiveSwitchToolValue(toolSwitch);
             }
@@ -156,9 +164,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "Create an archive index";
                 toolSwitch.Description = "Create an archive index (cf. ranlib).  This can speed up linking and reduce dependency within its own library.";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "s";
+                toolSwitch.SwitchValue = "-s";
                 toolSwitch.Name = "CreateIndex";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("CreateIndex", toolSwitch);
@@ -181,9 +189,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "Create Thin Archive";
                 toolSwitch.Description = "Create a thin archive.  A thin archive contains relativepaths to the objects instead of embedding the objects.  Switching between Thin and Normal requires deleting the existing library.";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "T";
+                toolSwitch.SwitchValue = "-T";
                 toolSwitch.Name = "CreateThinArchive";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("CreateThinArchive", toolSwitch);
@@ -206,9 +214,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "No Warning on Create";
                 toolSwitch.Description = "Do not warn if when the library is created.";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "c";
+                toolSwitch.SwitchValue = "-c";
                 toolSwitch.Name = "NoWarnOnCreate";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("NoWarnOnCreate", toolSwitch);
@@ -231,9 +239,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "Truncate Timestamp";
                 toolSwitch.Description = "Use zero for timestamps and uids/gids.";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "D";
+                toolSwitch.SwitchValue = "-D";
                 toolSwitch.Name = "TruncateTimestamp";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("TruncateTimestamp", toolSwitch);
@@ -256,9 +264,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "Suppress Startup Banner";
                 toolSwitch.Description = "Dont show version number.";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.ReverseSwitchValue = "V";
+                toolSwitch.ReverseSwitchValue = "-V";
                 toolSwitch.Name = "SuppressStartupBanner";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("SuppressStartupBanner", toolSwitch);
@@ -281,9 +289,9 @@ namespace BuildExt.Cpp.Clang.Tasks
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.DisplayName = "Verbose";
                 toolSwitch.Description = "Verbose";
-                toolSwitch.Parents.AddLast("Command");
+                //toolSwitch.Parents.AddLast("Command");
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "v";
+                toolSwitch.SwitchValue = "-v";
                 toolSwitch.Name = "Verbose";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("Verbose", toolSwitch);

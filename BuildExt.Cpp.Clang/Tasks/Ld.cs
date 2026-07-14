@@ -662,7 +662,7 @@ namespace BuildExt.Cpp.Clang.Tasks
                 base.ActiveToolSwitches.Remove("LinkDll");
                 ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.Boolean);
                 toolSwitch.ArgumentRelationList = new ArrayList();
-                toolSwitch.SwitchValue = "-shared";
+                toolSwitch.SwitchValue = "-Wl,-shared";
                 toolSwitch.Name = "LinkDll";
                 toolSwitch.BooleanValue = value;
                 base.ActiveToolSwitches.Add("LinkDll", toolSwitch);
