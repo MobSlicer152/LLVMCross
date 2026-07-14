@@ -30,6 +30,7 @@ namespace BuildExt.Cpp.Clang.Tasks
             this.switchOrderList.Add("Trace");
             this.switchOrderList.Add("TraceSymbols");
             this.switchOrderList.Add("PrintMap");
+            this.switchOrderList.Add("LinkerScript");
             this.switchOrderList.Add("UnresolvedSymbolReferences");
             this.switchOrderList.Add("OptimizeforMemory");
             this.switchOrderList.Add("SharedLibrarySearchPath");
@@ -89,6 +90,30 @@ namespace BuildExt.Cpp.Clang.Tasks
                 toolSwitch.Name = "OutputFile";
                 toolSwitch.Value = value;
                 base.ActiveToolSwitches.Add("OutputFile", toolSwitch);
+                base.AddActiveSwitchToolValue(toolSwitch);
+            }
+        }
+        public virtual string LinkerScript
+        {
+            get
+            {
+                if (base.IsPropertySet("LinkerScript"))
+                {
+                    return base.ActiveToolSwitches["LinkerScript"].Value;
+                }
+                return null;
+            }
+            set
+            {
+                base.ActiveToolSwitches.Remove("LinkerScript");
+                ToolSwitch toolSwitch = new ToolSwitch(ToolSwitchType.File);
+                toolSwitch.DisplayName = "Linker Script";
+                toolSwitch.Description = "Specify a linker script for the linker. (-T)";
+                toolSwitch.ArgumentRelationList = new ArrayList();
+                toolSwitch.SwitchValue = "-T ";
+                toolSwitch.Name = "LinkerScript";
+                toolSwitch.Value = value;
+                base.ActiveToolSwitches.Add("LinkerScript", toolSwitch);
                 base.AddActiveSwitchToolValue(toolSwitch);
             }
         }

@@ -82,6 +82,8 @@
   </EnumProperty>
   <StringProperty Name="GenerateMapFile" DisplayName="Map File Name" Description="The Map option tells the linker to create a map file with the user specified name. (-Map=)" Category="Debugging" Switch="Wl,-Map=" F1Keyword="VC.Project.VCLinkerTool.GenerateMapFile">
   </StringProperty>
+  <StringProperty Subtype="file" Name="LinkerScript" DisplayName="Linker Script" Description="Specify a linker script for the linker. (-T)" Category="Advanced" Switch="-T" F1Keyword="">
+  </StringProperty>
   <BoolProperty ReverseSwitch="Wl,-z,norelro" Name="Relocation" DisplayName="Mark Variables ReadOnly After Relocation" Description="This option marks variables read-only after relocation." Category="Advanced" Switch="Wl,-z,relro" F1Keyword="VC.Project.VCLinkerTool.Relocation">
   </BoolProperty>
   <BoolProperty Name="FunctionBinding" DisplayName="Enable Immediate Function Binding" Description="This option marks object for immediate function binding." Category="Advanced" Switch="Wl,-z,now" F1Keyword="VC.Project.VCLinkerTool.FunctionBinding">
