@@ -14,14 +14,7 @@ modification.
 
 ## Instructions
 
-You will need to build the `BuildExt.Cpp.Clang` project, and then make a symlink/NTFS junction to put the `LLVMCross`
-folder under `C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type`.
-
-```
-mklink /J "C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type\LLVMCross" "%CD%\LLVMCross"
-```
-
-There is a barebones project template included.
+Build the solution, then you should have a VSIX you can just install.
 
 ## Notes
 
