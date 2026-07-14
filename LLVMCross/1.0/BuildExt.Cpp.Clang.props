@@ -87,6 +87,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
         </ClCompile>
         
         <Link>
+            <AdditionalDependencies>m</AdditionalDependencies>
             <AdditionalOptions>--target=$(LLVMTarget) -fuse-ld=lld %(AdditionalOptions)</AdditionalOptions>
             <AdditionalOptions Condition="'$(GccToolChain)' != ''">%(AdditionalOptions) --gcc-toolchain=$(GccToolChain)</AdditionalOptions>
             <AdditionalOptions Condition="'$(Sysroot)' != ''">%(AdditionalOptions) --sysroot=$(Sysroot)</AdditionalOptions>

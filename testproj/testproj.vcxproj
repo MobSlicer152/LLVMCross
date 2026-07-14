@@ -1,121 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Generic">
-      <Configuration>Debug</Configuration>
-      <Platform>Generic</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|RISCV64">
-      <Configuration>Debug</Configuration>
-      <Platform>RISCV64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Generic">
-      <Configuration>Release</Configuration>
-      <Platform>Generic</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|RISCV64">
-      <Configuration>Release</Configuration>
-      <Platform>RISCV64</Platform>
-    </ProjectConfiguration>
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <ProjectGuid>{1b4c618e-0b42-4281-8e6e-b004ec94668b}</ProjectGuid>
-    <Keyword>LLVMCross</Keyword>
-    <RootNamespace>testproj</RootNamespace>
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
-    <ApplicationType>LLVMCross</ApplicationType>
-    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|RISCV64'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>Clang</PlatformToolset>
-    <Sysroot>Q:\toolchains\riscv\riscv64-unknown-linux-musl\sysroot\usr</Sysroot>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Generic'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>Clang</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|RISCV64'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>Clang</PlatformToolset>
-    <Sysroot>Q:\toolchains\riscv\riscv64-unknown-linux-musl\sysroot\usr</Sysroot>
-    <LLVMInstallDir>$(ProgramFiles)LLVM</LLVMInstallDir>
-    <LLVMToolsetVersion>22</LLVMToolsetVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Generic'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>Clang</PlatformToolset>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings" />
-  <ImportGroup Label="Shared" />
-  <ImportGroup Label="PropertySheets" />
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|RISCV64'">
-    <IncludePath />
-    <ExternalIncludePath />
-    <LibraryWPath />
-    <SourcePath />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Generic'">
-    <IncludePath />
-    <ExternalIncludePath />
-    <LibraryWPath />
-    <SourcePath />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|RISCV64'">
-    <IncludePath />
-    <ExternalIncludePath />
-    <LibraryWPath />
-    <SourcePath />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Generic'">
-    <IncludePath />
-    <ExternalIncludePath />
-    <LibraryWPath />
-    <SourcePath />
-  </PropertyGroup>
-  <ItemGroup>
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|RISCV64'">
-    <ClCompile />
-    <Link>
-      <AdditionalDependencies />
-      <IgnoreDefaultLibraries>false</IgnoreDefaultLibraries>
-      <VerboseOutput>true</VerboseOutput>
-    </Link>
-    <ClCompile>
-      <Verbose>true</Verbose>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Generic'">
-    <ClCompile />
-    <Link>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-      <IgnoreDefaultLibraries>true</IgnoreDefaultLibraries>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|RISCV64'">
-    <ClCompile>
-      <Verbose>true</Verbose>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies />
-      <IgnoreDefaultLibraries>false</IgnoreDefaultLibraries>
-      <VerboseOutput>true</VerboseOutput>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Generic'">
-    <Link>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-      <IgnoreDefaultLibraries>true</IgnoreDefaultLibraries>
-    </Link>
-  </ItemDefinitionGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+    <ItemGroup Label="ProjectConfigurations">
+        <ProjectConfiguration Include="Debug|Generic">
+            <Configuration>Debug</Configuration>
+            <Platform>Generic</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|RISCV64">
+            <Configuration>Debug</Configuration>
+            <Platform>RISCV64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|ARM64">
+            <Configuration>Debug</Configuration>
+            <Platform>ARM64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|Generic">
+            <Configuration>Release</Configuration>
+            <Platform>Generic</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|RISCV64">
+            <Configuration>Release</Configuration>
+            <Platform>RISCV64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|ARM64">
+            <Configuration>Release</Configuration>
+            <Platform>ARM64</Platform>
+        </ProjectConfiguration>
+    </ItemGroup>
+    <PropertyGroup Label="Globals">
+        <ProjectGuid>{1b4c618e-0b42-4281-8e6e-b004ec94668b}</ProjectGuid>
+        <Keyword>LLVMCross</Keyword>
+        <RootNamespace>testproj</RootNamespace>
+        <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+        <ApplicationType>LLVMCross</ApplicationType>
+        <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+        <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>Clang</PlatformToolset>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>Clang</PlatformToolset>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <ImportGroup Label="ExtensionSettings" />
+    <ImportGroup Label="Shared" />
+    <ImportGroup Label="PropertySheets" />
+    <PropertyGroup Label="UserMacros" />
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+    <ImportGroup Label="ExtensionTargets" />
 </Project>

@@ -21,12 +21,7 @@ folder under `C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Mi
 mklink /J "C:\Program Files\Microsoft Visual Studio\2022\<edition>\MSBuild\Microsoft\VC\v170\Application Type\LLVMCross" "%CD%\LLVMCross"
 ```
 
-To make your project work, compare `testproj.vcxproj` to a stock Linux vcxproj. The following are the major changes:
-
-- `Keyword` and `ApplicationType` are set to `LLVMCross` (this needs to be done by hand)
-- `Platform` is `Generic` or `RISCV64` instead of `ARM64`, `x64`, etc (can be done, albeit tediously, in the GUI)
-- `PlatformToolset` is set to `Clang` (should autopopulate in the GUI? just select if not)
-- In the `Generic` platform sections, `LLVMTarget` is used to specify the triple (can be set in the GUI)
+There is a barebones project template included.
 
 ## Notes
 
