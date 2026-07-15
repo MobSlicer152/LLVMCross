@@ -13,12 +13,12 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Import Project="$(MSBuildThisFileDirectory)ImportBefore\*.props" Condition="Exists('$(MSBuildThisFileDirectory)ImportBefore')" />
 
-    <Import Project="$(VCTargetsPath)Microsoft.Cpp.MSVC.Toolset.Common.props"/>
-    <Import Project="$(MSBuildThisFileDirectory)..\..\..\..\BuildExt.Cpp.Clang.props"/>
-
     <PropertyGroup>
         <LLVMTarget>aarch64-unknown-linux-gnu</LLVMTarget>
     </PropertyGroup>
+
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.MSVC.Toolset.Common.props"/>
+    <Import Project="$(MSBuildThisFileDirectory)..\..\..\..\BuildExt.Cpp.Clang.props"/>
 
     <Import Project="$(MSBuildThisFileDirectory)ImportAfter\*.props" Condition="Exists('$(MSBuildThisFileDirectory)ImportAfter')" />
 </Project>

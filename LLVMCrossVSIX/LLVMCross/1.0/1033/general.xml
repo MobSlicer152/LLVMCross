@@ -22,7 +22,7 @@
   </StringProperty>
   <StringProperty Name="LLVMInstallDir" DisplayName="LLVM Installation" Description="Installation of LLVM to use." Category="General" Visible="true" F1Keyword="" Default="C:\Program Files\LLVM">
   </StringProperty>
-  <StringProperty Name="LLVMToolsetVersion" DisplayName="LLVM Version" Description="Version of LLVM to use." Category="General" Visible="true" F1Keyword="" Default="22">
+  <StringProperty Name="LLVMToolsVersion" DisplayName="LLVM Version" Description="Version of LLVM to use." Category="General" Visible="true" F1Keyword="" Default="22">
   </StringProperty>
 
   <StringProperty Name="OutDir" DisplayName="Output Directory"

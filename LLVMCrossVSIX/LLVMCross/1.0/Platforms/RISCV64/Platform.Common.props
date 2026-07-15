@@ -24,25 +24,25 @@ Copyright (C) Microsoft Corporation. All rights reserved.
       <DebugInformationFormat  Condition="'%(ClCompile.DebugInformationFormatDefined)' != 'true' and '$(UseDebugLibraries)' == 'true' and '$(EnableASAN)' != 'true' and ('$(CLRSupport)' == '' or '$(CLRSupport)' == 'false')">EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link Condition="'$(BuildAsX)' != 'true'">
-      <TargetMachine Condition="'%(Link.TargetMachine)' == ''">MachineARM64</TargetMachine>
+      <TargetMachine Condition="'%(Link.TargetMachine)' == ''">MachineRISCV64</TargetMachine>
     </Link>
     <Link Condition="'$(BuildAsX)' == 'true'">
-      <TargetMachine Condition="'%(Link.TargetMachine)' == ''">MachineARM64X</TargetMachine>
+      <TargetMachine Condition="'%(Link.TargetMachine)' == ''">MachineRISCV64X</TargetMachine>
     </Link>
     <Lib Condition="'$(BuildAsX)' != 'true'">
-      <TargetMachine Condition="'%(Lib.TargetMachine)' == ''">MachineARM64</TargetMachine>
+      <TargetMachine Condition="'%(Lib.TargetMachine)' == ''">MachineRISCV64</TargetMachine>
     </Lib>
     <Lib Condition="'$(BuildAsX)' == 'true'">
-      <TargetMachine Condition="'%(Lib.TargetMachine)' == ''">MachineARM64X</TargetMachine>
+      <TargetMachine Condition="'%(Lib.TargetMachine)' == ''">MachineRISCV64X</TargetMachine>
     </Lib>
     <ImpLib Condition="'$(BuildAsX)' != 'true'">
-      <TargetMachine Condition="'%(ImpLib.TargetMachine)' == ''">MachineARM64</TargetMachine>
+      <TargetMachine Condition="'%(ImpLib.TargetMachine)' == ''">MachineRISCV64</TargetMachine>
     </ImpLib>
     <ImpLib Condition="'$(BuildAsX)' == 'true'">
-      <TargetMachine Condition="'%(ImpLib.TargetMachine)' == ''">MachineARM64X</TargetMachine>
+      <TargetMachine Condition="'%(ImpLib.TargetMachine)' == ''">MachineRISCV64X</TargetMachine>
     </ImpLib>
     <Midl>
-      <TargetEnvironment Condition="'%(Midl.TargetEnvironment)' == ''">ARM64</TargetEnvironment>
+      <TargetEnvironment Condition="'%(Midl.TargetEnvironment)' == ''">RISCV64</TargetEnvironment>
     </Midl>
   </ItemDefinitionGroup>
 </Project>

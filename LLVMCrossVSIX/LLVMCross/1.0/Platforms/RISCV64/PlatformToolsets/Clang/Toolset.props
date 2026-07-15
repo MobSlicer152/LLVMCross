@@ -13,12 +13,12 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Import Project="$(MSBuildThisFileDirectory)ImportBefore\*.props" Condition="Exists('$(MSBuildThisFileDirectory)ImportBefore')" />
 
+    <PropertyGroup>
+        <LLVMTarget>riscv64-unknown-linux-musl</LLVMTarget>
+    </PropertyGroup>
+
     <Import Project="$(VCTargetsPath)Microsoft.Cpp.MSVC.Toolset.Common.props"/>
     <Import Project="$(MSBuildThisFileDirectory)..\..\..\..\BuildExt.Cpp.Clang.props"/>
-
-    <PropertyGroup>
-        <LLVMTarget>riscv64-unknown-none</LLVMTarget>
-    </PropertyGroup>
 
     <Import Project="$(MSBuildThisFileDirectory)ImportAfter\*.props" Condition="Exists('$(MSBuildThisFileDirectory)ImportAfter')" />
 </Project>

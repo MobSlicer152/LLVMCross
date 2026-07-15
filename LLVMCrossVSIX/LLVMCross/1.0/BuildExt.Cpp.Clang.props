@@ -22,6 +22,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
         <LLVMIncludeVersion Condition="'$(LLVMIncludeVersion)' == ''">$(LLVMToolsVersion)</LLVMIncludeVersion>
         <ExecutablePath>$(LLVMInstallDir)\bin;$(ExecutablePath)</ExecutablePath>
         <IncludePath>$(LLVMInstallDir)\lib\clang\$(LLVMIncludeVersion)\include</IncludePath>
+        <IncludePath Condition="'$(GccToolChain)' != ''">$(GccToolChain)\include\c++\v1;$(GccToolChain)\include\$(LLVMTarget)\c++\v1;$(IncludePath)</IncludePath>
         <IncludePath Condition="'$(Sysroot)' != ''">$(Sysroot)\include;$(IncludePath)</IncludePath>
         <ExcludePath Condition="'$(ExcludePath)' == ''">$(LLVMInstallDir)\lib\clang\$(LLVMIncludeVersion)\include;$(CommonExcludePath)</ExcludePath>
     </PropertyGroup>
